@@ -9,6 +9,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Avatar, Stack } from '@mui/material';
 
 import TwitterIcon from '@mui/icons-material/Twitter';
 
@@ -33,25 +34,22 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Card sx={{ minWidth: 400 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-              Word of the Day
+            <Stack direction="row" sx={{marginBottom: 2}}>
+              <Avatar sx={{ width: 128, height: 128, marginRight: 2 }} alt="Emily Carlsen" src="/favicon.png" />
+              <Stack>
+                <Typography>Emily Carlsen</Typography>
+                <Typography>she/her</Typography>
+                <Typography>What I do: Passionate thinker/problem solver, using code and modern software development to help solve peoples' problems!</Typography>
+                <Typography>Other stuff I enjoy: DIY, Interior Design, Movies/TV, YouTube, Podcasts, Cars, PC &amp; Console Gaming, Tech, Photography/Videography</Typography>
+              </Stack>
+            </Stack>
+            <Typography>
+              Where to find me:
             </Typography>
-            <Typography variant="h5" component="div">
-              be{bull}nev{bull}o{bull}lent
+            <Typography>
+              Cool stuff I've made:
             </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              adjective
-            </Typography>
-            <Typography variant="body2">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
-            <TwitterIcon />
           </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
         </Card>
       </main>
     </div>
