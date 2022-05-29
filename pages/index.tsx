@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import * as React from 'react';
@@ -12,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import { Avatar, Stack } from '@mui/material';
 
 import TwitterIcon from '@mui/icons-material/Twitter';
+
+import profilePic from './images/emily.jpg'
 
 const bull = (
   <Box
@@ -32,22 +35,30 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Card sx={{ minWidth: 400 }}>
+        <Card sx={{ minWidth: 800, maxWidth: 800, padding: 3, borderRadius: '10px' }} raised={true}>
           <CardContent>
-            <Stack direction="row" sx={{marginBottom: 2}}>
-              <Avatar sx={{ width: 128, height: 128, marginRight: 2 }} alt="Emily Carlsen" src="/favicon.png" />
-              <Stack>
-                <Typography>Emily Carlsen</Typography>
-                <Typography>she/her</Typography>
-                <Typography>What I do: Passionate thinker/problem solver, using code and modern software development to help solve peoples' problems!</Typography>
-                <Typography>Other stuff I enjoy: DIY, Interior Design, Movies/TV, YouTube, Podcasts, Cars, PC &amp; Console Gaming, Tech, Photography/Videography</Typography>
+            <Stack direction="row" sx={{ marginBottom: 4 }}>
+              <Avatar className={styles.avatar} sx={{ width: 220, height: 220, marginRight: 3 }}>
+                <Image
+                  src={profilePic}
+                  alt="Profile picture of Emily Carlsen"/>
+              </Avatar>
+              <Stack sx={{marginTop: 3}}>
+                <Typography variant='h2' sx={{marginLeft: '-5px'}}>Emily Carlsen</Typography>
+                <Typography variant='caption' sx={{marginTop: '-5px'}}>(she/her)</Typography>
+                <Typography variant='subtitle1' sx={{marginTop: 2}}>
+                  What I Do: Passionate thinker/problem solver, using code and modern software development to help solve peoples' problems!
+                </Typography>
               </Stack>
             </Stack>
-            <Typography>
-              Where to find me:
+            <Typography sx={{marginBottom: 2}}>
+              Hobbies: DIY, Interior Design, Movies/TV, YouTube, Podcasts, Cars, PC &amp; Console Gaming, Tech, Photography/Videography
+            </Typography>
+            <Typography sx={{marginBottom: 2}}>
+              Socials:
             </Typography>
             <Typography>
-              Cool stuff I've made:
+              Featured Application: <a href='https://jsoninspect.com/' target='_blank'>https://jsoninspect.com/</a>
             </Typography>
           </CardContent>
         </Card>
